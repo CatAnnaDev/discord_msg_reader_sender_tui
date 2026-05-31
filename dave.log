@@ -1,0 +1,96 @@
+06:17:37 [Information] image backend: Kitty 7x13 (queried)
+06:17:37 [Information] === BUILD MARKER: vtdec-hw + op21-ping + no-decode-resize ===
+06:17:37 [Information] HELLO heartbeat_interval=41250ms
+06:17:38 [Information] thumbnails: 6 cached, 0 downloaded, 0 failed (of 6)
+06:17:46 [Information] maybe_start_voice: spawning CALL voice manager
+06:17:46 [Information] Voice[call]: connecting to wss://c-cdg15-93f1ec7e.discord.media:2087/?v=9
+06:17:47 [Information] Voice READY: ssrc=23583 endpoint=104.29.151.43:19318 modes=["aead_aes256_gcm_rtpsize", "aead_xchacha20_poly1305_rtpsize"]
+06:17:47 [Information] Voice external addr discovered: 87.90.119.44:65286
+06:17:47 [Information] Voice SELECT_PROTOCOL mode=aead_aes256_gcm_rtpsize (gateway offered: ["aead_aes256_gcm_rtpsize", "aead_xchacha20_poly1305_rtpsize"])
+06:17:47 [Information] DAVE pre-op4 op11 d={"user_ids":["204972632863539201","235105805429506058"]}
+06:17:47 [Information] DAVE pre-op4 op5 d={"speaking":1,"ssrc":23570,"user_id":"204972632863539201"}
+06:17:47 [Information] DAVE pre-op4 op5 d={"speaking":1,"ssrc":23578,"user_id":"235105805429506058"}
+06:17:47 [Information] Voice SESSION_DESCRIPTION received (mode=aead_aes256_gcm_rtpsize)
+06:17:47 [Information] DAVE: group_id (voice channel) = 1506507001818255562
+06:17:47 [Information] voice: input devices = ["JBL Tune 720BT", "Anna’s xsmax Microphone", "BIRD UM1"]
+06:17:47 [Information] voice: output devices = ["S24D340"]
+06:17:47 [Information] voice: TX DSP enabled=true hpf=true gate=true comp=true agc=true
+06:17:47 [Information] DAVE rx bin 74B head=000819404104af541238f1dbd7726dc934506a24143228a912011dc352582cb131f1fe0a53702f0bbbc6fb80a640a72a
+06:17:47 [Information] libdave: Creating a new MLS session
+06:17:47 [Information] libdave: Unmarshalling MLS external sender
+06:17:47 [Information] libdave: Sender: 404104af541238f1dbd7726dc934506a24143228a912011dc352582cb131f1fe0a53702f0bbbc6fb80a640a72aeb6a5a9258d59e2c13e258593683245a0cbf31a0524300010100
+06:17:47 [Information] libdave: Waiting for group ID to create a pending group
+06:17:47 [Information] libdave: Resetting MLS session
+06:17:47 [Information] libdave: Initializing MLS session with protocol version 1 and group ID 1506507001818255562
+06:17:47 [Information] libdave: Created MLS leaf node
+06:17:47 [Information] libdave: Creating a pending MLS group
+06:17:47 [Information] libdave: Created a pending MLS group
+06:17:47 [Information] libdave: Generated key package: 0001000240410421e746e431c9813e4b564396f158985fb29360c8a1995d54d6e6c49f9be7bbcf898bd741a36cbb803102e1c9b10d4348bb3615c2857621930b434b28fc49da9a404104e42a247f9647833fb506f41909f52f35bd14fb9189dadb7d28267b74235a2deeeb26142898921d0c2619b7a0432fb90b53ff1055dbab0a3d7e36a5958cfc44094041041a84902f18a02b38f0d7bca047b9c4a4b1d375b3644a72b94218ecbf0e550f9952a248988a5c772f7a64abca62055aac30a7ae44906206a9d83ab5feffb0b72a00010810aed8d8540400280200010200020000020001010000000000000000ffffffffffffffff0040463044022015b977b3756604ea87c5045d233b051027f238fdc6f77d74cd612065327653e2022059ed300e15548d91ad568efe9a41ddbbf752547097e9677c6bccf9f427c147ca00404730450220145f3eeacde1cef2cb49cb03fbc1b8af423bfa5e2677325f55c5a21310f78644022100888280f08f6d3a07f5d350e794e4884b9e742e8b1a39cb15acf6ed5ce41fe82b
+06:17:47 [Information] DAVE: op25 external sender stored (71B)
+06:17:47 [Information] DAVE: op26 392B sent (libdave)
+06:17:47 [Information] voice: output 'JBL Tune 720BT' only on input list (BT/HFP); trying it for output → JBL Tune 720BT
+06:17:47 [Erreur] voice: 'JBL Tune 720BT' has no output config (The requested stream type is not supported by the device.); using system default output
+06:17:47 [Information] DAVE rx bin 1209B head=00091e000100024098203f47fdef13e699257b41eb03404904e3f8625f66b2c3c8d7dc860580d08d45204041045be45d
+06:17:47 [Information] voice: speaker playback 48000 Hz x8 ch ← resample from 48000 Hz mono
+06:17:47 [Information] voice: RX DSP enabled=true hpf=true@90 gate=true comp=true(r4) agc=true
+06:17:47 [Information] libdave: Processing welcome: 00024098203f47fdef13e699257b41eb03404904e3f8625f66b2c3c8d7dc860580d08d45204041045be45d4a0d9c8a033b2d3537aa98806c0c2a61ca2361299373b395a2532182c8b19e96eefb797607ee1c9010b265d0ccc2c35c63f42aa3747c9375a888b76756336b79b1f2bd7e613deef228946c2a8f1afdbed745b6d608cfd8c18635420a0a2566ca29698b165a3e38f04ee1ac8160f665fb5a4416dda89f2799ed9abc459fd8e9f64060793b7ae199489e9513e064b8a0203e819df81ab476f0c8a73fb526ec783bce389dfb69d1a36740b93b588466583d95713162552122bd1e1010d7a2da142eed4618d0788a47a546640176b9d07e37a92d2a65a55050493594c58cb016dffd8dbc1609bb1004d9dc2b5c44dcf7086a5a9eadc0e4fe91c400057a14ecaca9ce68c2b15cadb3d01de4a820e30b680e0b29ba6261b9494bdc72b1f2769e960477a6c948c28d3af34a83808cb3677880d75aecac31706e0d00bef5ca1b6e023f609ef46a6328d12966123f554e0ecc9437d64d36d1393e9d2c1953e098de8528625e4684067941779e4f8a338b8f7d68b3e40689aeafc63986535cb2f2c0e59d11482c03bbab22287d8bb7f874a590419c64178d809715a6a14550cc98599c9c3e8f977035b02cfbb955d7c99de52d05fa753f30ac18a799f0979f9a5c55db2a08e0e44019969d522304ffb77ebdf1d8ecab5430355d66733791da6711ed43adf5324b23d3315bc5ce910954192aac268476b921c369b0af4336cfd6eff509c36ec0bf26266f8b2dc99a15c997a1d2cf987450be9b41d9bd3d744b8f063b49e5b0fe3c74f4330f34ae75de24a3c6780ff97445294a0f1747c9416813e6265a0b35d40e2e0b588b80876198a5fd0a836f47e94014cbf1d30da6e384b3c8852c886770e50c363f4b5eaf4738586602e2f180ce8f24eac53dd4e6959dcfbf4985d055c940b5b7c1d293265306ae350f506bee6cac331780cac55a2543b19eb7a6f926c10343fc9be2df17c5d8f4152fd40e3cb46920d83365e9bfe50daf577f81f835ac3e1fdfd8feacac09975e99705985239542005ac042db1b0e0c9c791457d790dc51b3b67d0b8d70500d0b3f386aae0b6a8f0603c833afc5dcf5eccc47ec6d5f9132908308caa0c9099fa94286bcaa99ad06c23f0e2d38cb111570c056bbbffed13337accd020b214625827a3b66f6412fb459aae905eb1d0e29134f6c4fbcfbf1dfb3c45f9016ee4d06e1fa31dc2f7f825c8b27ccc1ece9b0e756e0dafc371d6dac44d302ce862ee748450afc31ac983f040d58806942bc109265a241141c737809cf1b36903fe7b826ebbb235d715e6ad345c2abeeb247a557beb666c583f1472b03c8a7312784baa9e1017bf0b812cdb9707f3cf0be7880050860d371254f08e3078386d9f41c39f7926cb17c75725a292d3f30d4dbb2468754e3323f58c758ecba219a03b3f44fb54337a3f0a06cce1e47cbafe29d24f30a6e4497bb018c1481433758b801e57d84ca96ed68ac0e2e162b4fce6f4bf9f3c0884137d9e6898421e8c1603b24c7c0a6516102a607abdb14ef0fdab77902a2798db45d9c8800786a1087e079dd367114b83ccf8ea3f70a9941c7e2e663051749ec3594dacee53a139fc4e2cc64cd72b16a4ac548d75e4d765def1497a7271aa3cf62dd0616af74d507152b9b575148
+06:17:47 [Information] libdave: Successfully welcomed to MLS Group, our leaf index is 2; current epoch is 2
+06:17:47 [Information] libdave: Transitioning to new key ratchet: 0x964cb3360, expiry: 10
+06:17:47 [Information] libdave: Transitioning to new key ratchet: 0x964cb34e0, expiry: 10
+06:17:47 [Information] DAVE: op30 ok=true → op23(tid=1) armed verif=28334 63204 11079 15774 00898 76011
+06:17:47 [Information] DAVE state: pending_speakers=2 roster=2 inited=true enabled=true dec_ssrcs=[23570, 23578] ratchet_uids=[204972632863539201, 235105805429506058, 1202136574188585000] ssrc_uid=[(23570, 204972632863539201), (23578, 235105805429506058)]
+06:17:47 [Information] libdave: Decrypt skipping silence of size: 3
+06:17:47 [Information] DAVE diag recv(armed): ssrc=23570 plen=3 -> OK len=3
+06:17:47 [Information] libdave: Decrypt skipping silence of size: 3
+06:17:47 [Information] DAVE diag recv(armed): ssrc=23570 plen=3 -> OK len=3
+06:17:47 [Information] voice DAVE op 22 d={"transition_id":1}
+06:17:47 [Information] libdave: Transitioning to new key ratchet: 0x964cb3420, expiry: 10
+06:17:47 [Information] libdave: Transitioning to new key ratchet: 0x964cb3360, expiry: 10
+06:17:47 [Information] DAVE: op22 execute → armed verif=28334 63204 11079 15774 00898 76011
+06:17:47 [Information] DAVE state: pending_speakers=2 roster=2 inited=true enabled=true dec_ssrcs=[23570, 23578] ratchet_uids=[204972632863539201, 235105805429506058, 1202136574188585000] ssrc_uid=[(23570, 204972632863539201), (23578, 235105805429506058)]
+06:17:47 [Information] voice: trying capture device 'JBL Tune 720BT' 16000 Hz x1 ch
+06:17:47 [Information] libdave: Retrieving key for generation 0 from HashRatchet
+06:17:47 [Information] libdave: Encrypted audio: 1, video: 0. Failed audio: 0, video: 0
+06:17:47 [Information] libdave: Last encrypted frame, type: audio, ssrc: 23583, size: 250
+06:17:47 [Information] voice send #1: enabled=true dave_enc=true rms=1 opus=250B media=262B
+06:17:47 [Information] voice send #2: enabled=true dave_enc=true rms=1 opus=122B media=134B
+06:17:47 [Information] voice send #3: enabled=true dave_enc=true rms=0 opus=180B media=192B
+06:17:47 [Information] voice send #4: enabled=true dave_enc=true rms=1 opus=188B media=200B
+06:17:47 [Information] voice send #5: enabled=true dave_enc=true rms=3 opus=132B media=144B
+06:17:47 [Information] voice send #6: enabled=true dave_enc=true rms=13 opus=173B media=185B
+06:17:47 [Information] voice send #7: enabled=true dave_enc=true rms=34 opus=134B media=146B
+06:17:47 [Information] voice send #8: enabled=true dave_enc=true rms=32 opus=136B media=148B
+06:17:47 [Information] libdave: Retrieving key for generation 0 from HashRatchet
+06:17:47 [Information] libdave: Creating cryptor for new generation: 0
+06:17:47 [Information] libdave: Decrypted audio: 1, video: 0. Failed audio: 0, video: 0
+06:17:47 [Information] DAVE diag recv(armed): ssrc=23570 plen=137 -> OK len=125
+06:17:47 [Information] DAVE diag recv(armed): ssrc=23570 plen=137 -> OK len=125
+06:17:47 [Information] DAVE diag recv(armed): ssrc=23570 plen=164 -> OK len=152
+06:17:47 [Information] DAVE diag recv(armed): ssrc=23570 plen=212 -> OK len=200
+06:17:47 [Information] DAVE diag recv(armed): ssrc=23570 plen=342 -> OK len=330
+06:17:47 [Information] DAVE diag recv(armed): ssrc=23570 plen=380 -> OK len=368
+06:17:47 [Information] DAVE diag recv(armed): ssrc=23570 plen=341 -> OK len=329
+06:17:48 [Information] DAVE diag recv(armed): ssrc=23570 plen=332 -> OK len=320
+06:17:48 [Information] DAVE diag recv(armed): ssrc=23570 plen=328 -> OK len=316
+06:17:48 [Information] DAVE diag recv(armed): ssrc=23570 plen=333 -> OK len=321
+06:17:48 [Information] DAVE diag recv(armed): ssrc=23570 plen=341 -> OK len=329
+06:17:48 [Information] DAVE diag recv(armed): ssrc=23570 plen=346 -> OK len=334
+06:17:48 [Information] DAVE diag recv(armed): ssrc=23570 plen=337 -> OK len=325
+06:17:48 [Information] DAVE diag recv(armed): ssrc=23570 plen=319 -> OK len=307
+06:17:48 [Information] DAVE diag recv(armed): ssrc=23570 plen=280 -> OK len=268
+06:17:48 [Information] DAVE diag recv(armed): ssrc=23570 plen=257 -> OK len=245
+06:17:48 [Information] DAVE diag recv(armed): ssrc=23570 plen=256 -> OK len=244
+06:17:48 [Information] DAVE diag recv(armed): ssrc=23570 plen=251 -> OK len=239
+06:17:49 [Information] voice: capture device = JBL Tune 720BT (peak=0.24503) — using it
+06:17:49 [Information] libdave: Decrypt skipping silence of size: 3
+06:17:49 [Information] libdave: Decrypt skipping silence of size: 3
+06:17:49 [Information] libdave: Decrypt skipping silence of size: 3
+06:17:49 [Information] libdave: Decrypt skipping silence of size: 3
+06:17:49 [Information] libdave: Decrypt skipping silence of size: 3
+06:17:49 [Information] libdave: Decrypt skipping silence of size: 3
+06:17:49 [Information] libdave: Decrypt skipping silence of size: 3
+06:17:49 [Information] libdave: Decrypt skipping silence of size: 3
+06:17:49 [Information] libdave: Decrypt skipping silence of size: 3
+06:17:49 [Information] libdave: Decrypt skipping silence of size: 3
+06:17:50 [Information] Voice[call]: explicit Disconnect command received
+06:17:50 [Information] Voice[call] manager exiting: disconnect requested

@@ -1,0 +1,79 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  CARGO_TERM_COLOR: always
+  CMAKE_POLICY_VERSION_MINIMUM: "3.5"
+
+jobs:
+  build:
+    name: Build, lint & test (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Toolchain stable
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+
+      - name: Outils de build C++ (macOS)
+        if: runner.os == 'macOS'
+        run: brew install cmake pkg-config autoconf automake autoconf-archive libtool
+
+      - name: Dependances systeme (Linux)
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            build-essential cmake pkg-config ninja-build nasm \
+            autoconf automake autoconf-archive libtool \
+            zip unzip tar curl \
+            libssl-dev libasound2-dev libopus-dev \
+            libpipewire-0.3-dev libwayland-dev libegl-dev libgbm-dev libdrm-dev clang libclang-dev \
+            libxcb1-dev libxcb-render0-dev libxcb-shape0-dev libxcb-xfixes0-dev libxcb-randr0-dev libxcb-shm0-dev \
+            libx11-dev
+
+      - name: Cache libdave (vcpkg + build)
+        uses: actions/cache@v4
+        with:
+          path: |
+            third_party/libdave/cpp/build
+            ~/.cache/vcpkg
+          key: libdave-${{ runner.os }}-${{ hashFiles('third_party/libdave/cpp/CMakeLists.txt', 'third_party/libdave/cpp/Makefile') }}
+
+      - name: Build libdave
+        run: |
+          if [ ! -f third_party/libdave/cpp/build/libdave.a ]; then
+            make -C third_party/libdave/cpp all
+          fi
+
+      - uses: Swatinem/rust-cache@v2
+
+      - name: Format
+        run: cargo fmt --all --check
+
+      - name: Clippy
+        run: cargo clippy --all-targets --all-features -- -D warnings
+
+      - name: Build
+        run: cargo build --all-targets --all-features --verbose
+
+      - name: Tests
+        run: cargo test --all-features --verbose

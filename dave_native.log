@@ -1,0 +1,155 @@
+==== DaveSniffer 2026-05-15 08:34:14.758 (1778834054.758100) — capturing. Leave a voice channel to auto-copy, or run window.__daveDump() ====
+2026-05-15 08:34:59.189 (1778834099.189500) ==== NEW VOICE WS wss://c-cdg10-42535196.discord.media:2087/?v=9 ====
+2026-05-15 08:34:59.310 (1778834099.310900) SEND [text op=0]
+  {"op":0,"d":{"server_id":"1476763563409539275","channel_id":"1486811384208560148","user_id":"204972632863539201","session_id":"8940568f1f307f8efb418f8d72128aa9","token":"4d597fb106f18f8c","max_dave_protocol_version":1,"video":true,"streams":[{"type":"video","rid":"100","quality":100},{"type":"video","rid":"50","quality":50}]}}
+2026-05-15 08:34:59.312 (1778834099.312000) RECV [text op=8]
+  {"op":8,"d":{"v":8,"heartbeat_interval":13750}}
+2026-05-15 08:34:59.338 (1778834099.338700) RECV [text op=2]
+  {"op":2,"d":{"streams":[{"type":"video","ssrc":6355,"rtx_ssrc":6356,"rid":"50","quality":50,"active":false},{"type":"video","ssrc":6357,"rtx_ssrc":6358,"rid":"100","quality":100,"active":false}],"ssrc":6354,"port":19323,"modes":["aead_aes256_gcm_rtpsize","aead_xchacha20_poly1305_rtpsize"],"ip":"104.29.151.48","experiments":["fixed_keyframe_interval"]}}
+2026-05-15 08:34:59.339 (1778834099.339200) SEND [text op=16]
+  {"op":16,"d":{}}
+2026-05-15 08:34:59.368 (1778834099.368700) RECV [text op=16]
+  {"op":16,"d":{"voice":"0.21.6","rtc_worker":"1.6.61"}}
+2026-05-15 08:34:59.372 (1778834099.372500) SEND [text op=1]
+  {"op":1,"d":{"protocol":"udp","data":{"address":"87.90.119.44","port":50947,"mode":"aead_aes256_gcm_rtpsize"},"address":"87.90.119.44","port":50947,"mode":"aead_aes256_gcm_rtpsize","codecs":[{"name":"opus","type":"audio","priority":1000,"payload_type":120},{"name":"AV1","type":"video","priority":1000,"payload_type":101,"rtx_payload_type":102,"encode":false,"decode":true},{"name":"H265","type":"video","priority":2000,"payload_type":103,"rtx_payload_type":104,"encode":true,"decode":true},{"name":"H264","type":"video","priority":3000,"payload_type":105,"rtx_payload_type":106,"encode":true,"decode":true},{"name":"VP8","type":"video","priority":4000,"payload_type":107,"rtx_payload_type":108,"encode":true,"decode":true}],"rtc_connection_id":"cdb5b166-a780-4ccc-9a4b-7fe8c00ced2c","experiments":["fixed_keyframe_interval"]}}
+2026-05-15 08:34:59.399 (1778834099.399500) RECV [text op=4]
+  {"op":4,"d":{"video_codec":"H265","secure_frames_version":1,"secret_key":[118,33,58,129,159,107,9,74,52,230,14,33,148,168,76,27,17,233,124,121,64,172,151,116,187,39,126,40,161,103,134,151],"mode":"aead_aes256_gcm_rtpsize","media_session_id":"79f6cd580ecd4199f533a0c5f158b28b","dave_protocol_version":1,"audio_codec":"opus"}}
+2026-05-15 08:34:59.401 (1778834099.401000) RECV [text op=15]
+  {"seq":0,"op":15,"d":{"any":100}}
+2026-05-15 08:34:59.401 (1778834099.401700) RECV [binary 74B op=25 seq=1]
+  000119404104c4442018e9a4c3644b0056e4f1fdb815483d5ca45f47c0cf0d3add9c9eeaa5870c61cc49b16111fd3bae200ebf9bb6a210841e0ec584d7a60d60d345d048c48000010100
+2026-05-15 08:34:59.403 (1778834099.403700) SEND [binary 392B op=26 seq=null]
+  1a00010002404104ed1915527b51b6790238c18f1141b7ad2de4f8c30de139cfe84f22845fc9ed4e79b817b3647f9d0e7bf6ae29b07dede317bdc93ad9003c40f4e4aa94e5c7b5d64041045d7ce0482259386736344b0e6e85a0bbbac21484c49f667a88736c3a325ecfd9e0e67faa51b51380c113e1b3d314f37e14d395bf6b8969c88fb54b76081306b7404104634b75fc71389f7e5340a6f2bd09cc1e39b5be29038b64559ae0f47992216635c4690d5fcf6c11e9ee312e923e14ed7bbbb44a35161d67ae41587348d6846fb800010802d835860a8200010200010200020000020001010000000000000000ffffffffffffffff0040473045022054cb2024c392126acd6063a6c5b504d4cd560f06da44c2fd48a1609f965e1bf3022100f010bc34496785b47d382ad96e7498df035e385422b90b777378703bef8eae970040463044022044d758b6a7fdac79e3ec742bbd1d86d099d892a63ca4f51ad7746352e5b53274022006b655395af7bc732c761a74127a9b72a266d6efbf653042a3fa65dde4c78c9e
+2026-05-15 08:35:09.437 (1778834109.437200) ==== VOICE WS CLOSE code=4000 reason= ====
+2026-05-15 08:35:54.810 (1778834154.810800) ==== NEW VOICE WS wss://c-cdg08-2d7aef61.discord.media:2087/?v=9 ====
+2026-05-15 08:35:54.930 (1778834154.930300) SEND [text op=0]
+  {"op":0,"d":{"server_id":"1476763563409539275","channel_id":"1486811384208560148","user_id":"204972632863539201","session_id":"8940568f1f307f8efb418f8d72128aa9","token":"6fd4e1c78ad5cf28","max_dave_protocol_version":1,"video":true,"streams":[{"type":"video","rid":"100","quality":100},{"type":"video","rid":"50","quality":50}]}}
+2026-05-15 08:35:54.931 (1778834154.931900) RECV [text op=8]
+  {"op":8,"d":{"v":8,"heartbeat_interval":13750}}
+2026-05-15 08:35:54.959 (1778834154.959100) RECV [text op=2]
+  {"op":2,"d":{"streams":[{"type":"video","ssrc":5029,"rtx_ssrc":5030,"rid":"50","quality":50,"active":false},{"type":"video","ssrc":5031,"rtx_ssrc":5032,"rid":"100","quality":100,"active":false}],"ssrc":5028,"port":19322,"modes":["aead_aes256_gcm_rtpsize","aead_xchacha20_poly1305_rtpsize"],"ip":"104.29.151.185","experiments":["fixed_keyframe_interval"]}}
+2026-05-15 08:35:54.959 (1778834154.959300) SEND [text op=16]
+  {"op":16,"d":{}}
+2026-05-15 08:35:54.986 (1778834154.986600) RECV [text op=16]
+  {"op":16,"d":{"voice":"0.21.6","rtc_worker":"1.6.61"}}
+2026-05-15 08:35:54.991 (1778834154.991600) SEND [text op=1]
+  {"op":1,"d":{"protocol":"udp","data":{"address":"87.90.119.44","port":50869,"mode":"aead_aes256_gcm_rtpsize"},"address":"87.90.119.44","port":50869,"mode":"aead_aes256_gcm_rtpsize","codecs":[{"name":"opus","type":"audio","priority":1000,"payload_type":120},{"name":"AV1","type":"video","priority":1000,"payload_type":101,"rtx_payload_type":102,"encode":false,"decode":true},{"name":"H265","type":"video","priority":2000,"payload_type":103,"rtx_payload_type":104,"encode":true,"decode":true},{"name":"H264","type":"video","priority":3000,"payload_type":105,"rtx_payload_type":106,"encode":true,"decode":true},{"name":"VP8","type":"video","priority":4000,"payload_type":107,"rtx_payload_type":108,"encode":true,"decode":true}],"rtc_connection_id":"27f7a1fa-d6c8-4db5-abc3-b9ca562e144b","experiments":["fixed_keyframe_interval"]}}
+2026-05-15 08:35:55.020 (1778834155.020500) RECV [text op=4]
+  {"op":4,"d":{"video_codec":"H265","secure_frames_version":1,"secret_key":[3,110,235,210,137,108,35,19,81,181,108,144,15,152,205,73,129,21,94,75,73,178,32,138,227,175,32,85,22,105,116,171],"mode":"aead_aes256_gcm_rtpsize","media_session_id":"4665c6e1e00516a2b8d91f8886b0a1e8","dave_protocol_version":1,"audio_codec":"opus"}}
+2026-05-15 08:35:55.021 (1778834155.021900) RECV [text op=15]
+  {"seq":0,"op":15,"d":{"any":100}}
+2026-05-15 08:35:55.022 (1778834155.022600) RECV [binary 74B op=25 seq=1]
+  000119404104f476246b83a1fc995c5ad1effa3732430612c3f04d3907530337778e5a851c59c17f5c50ff4286b2a8d64f718bb6599105463687b9524eaf1b7bdeda641ad02800010100
+2026-05-15 08:35:55.023 (1778834155.023300) SEND [binary 393B op=26 seq=null]
+  1a00010002404104a3d43adfe2a331675a2599a8ee67ba2e1f77da65c66a53cff0d3ecf71e89b09a50e862cba77858f9ab91703b96b7b0519d2ddcca5aaf38eade6b999dd7aaa0f14041042b72aed0caa37d9d87f497370864e08d37d586b4ebb11c419b150d98a32c1743e9df74b23fd3f10d708cd87467b40d3a4020eb2b7488df5ea39b375e6239487240410422cb5c1b50b77a3b487e050cfb618f07a4ab19e9900e992f9987b3d6451f46d25e752e2a506f05c257d60763657a6bda0a4e9ea0ea64d54b669b934f75194ebe00010802d835860a8200010200010200020000020001010000000000000000ffffffffffffffff0040473045022100c9e347f75990b0c67f67159b7ea04c00d785c3bc2046fca74bd292ddb40ca20b022007f93d254906ee1918ba6f5ba2c6fd5860c41b27adbcb0ba346a46e833ec631d00404730450221009f80af536e3aebe7b3f431ce34842d7c76c831a8a47aa7ec8f5add7d3db40b18022037cf27ed73cc2fcdce2d3a5e97138e3690f14fd463b9e551ce2b30388a8cdf37
+2026-05-15 08:36:08.683 (1778834168.683900) SEND [text op=3]
+  {"op":3,"d":{"t":1778834168683,"seq_ack":1}}
+2026-05-15 08:36:08.712 (1778834168.712300) RECV [text op=6]
+  {"op":6,"d":{"t":1778834168683}}
+2026-05-15 08:36:12.887 (1778834172.887300) ==== VOICE WS CLOSE code=4000 reason= ====
+
+
+
+
+
+
+
+==== DaveSniffer 2026-05-15 08:34:14.758 (1778834054.758100) — capturing. Leave a voice channel to auto-copy, or run window.__daveDump() ====
+2026-05-15 08:34:59.189 (1778834099.189500) ==== NEW VOICE WS wss://c-cdg10-42535196.discord.media:2087/?v=9 ====
+2026-05-15 08:34:59.310 (1778834099.310900) SEND [text op=0]
+  {"op":0,"d":{"server_id":"1476763563409539275","channel_id":"1486811384208560148","user_id":"204972632863539201","session_id":"8940568f1f307f8efb418f8d72128aa9","token":"4d597fb106f18f8c","max_dave_protocol_version":1,"video":true,"streams":[{"type":"video","rid":"100","quality":100},{"type":"video","rid":"50","quality":50}]}}
+2026-05-15 08:34:59.312 (1778834099.312000) RECV [text op=8]
+  {"op":8,"d":{"v":8,"heartbeat_interval":13750}}
+2026-05-15 08:34:59.338 (1778834099.338700) RECV [text op=2]
+  {"op":2,"d":{"streams":[{"type":"video","ssrc":6355,"rtx_ssrc":6356,"rid":"50","quality":50,"active":false},{"type":"video","ssrc":6357,"rtx_ssrc":6358,"rid":"100","quality":100,"active":false}],"ssrc":6354,"port":19323,"modes":["aead_aes256_gcm_rtpsize","aead_xchacha20_poly1305_rtpsize"],"ip":"104.29.151.48","experiments":["fixed_keyframe_interval"]}}
+2026-05-15 08:34:59.339 (1778834099.339200) SEND [text op=16]
+  {"op":16,"d":{}}
+2026-05-15 08:34:59.368 (1778834099.368700) RECV [text op=16]
+  {"op":16,"d":{"voice":"0.21.6","rtc_worker":"1.6.61"}}
+2026-05-15 08:34:59.372 (1778834099.372500) SEND [text op=1]
+  {"op":1,"d":{"protocol":"udp","data":{"address":"87.90.119.44","port":50947,"mode":"aead_aes256_gcm_rtpsize"},"address":"87.90.119.44","port":50947,"mode":"aead_aes256_gcm_rtpsize","codecs":[{"name":"opus","type":"audio","priority":1000,"payload_type":120},{"name":"AV1","type":"video","priority":1000,"payload_type":101,"rtx_payload_type":102,"encode":false,"decode":true},{"name":"H265","type":"video","priority":2000,"payload_type":103,"rtx_payload_type":104,"encode":true,"decode":true},{"name":"H264","type":"video","priority":3000,"payload_type":105,"rtx_payload_type":106,"encode":true,"decode":true},{"name":"VP8","type":"video","priority":4000,"payload_type":107,"rtx_payload_type":108,"encode":true,"decode":true}],"rtc_connection_id":"cdb5b166-a780-4ccc-9a4b-7fe8c00ced2c","experiments":["fixed_keyframe_interval"]}}
+2026-05-15 08:34:59.399 (1778834099.399500) RECV [text op=4]
+  {"op":4,"d":{"video_codec":"H265","secure_frames_version":1,"secret_key":[118,33,58,129,159,107,9,74,52,230,14,33,148,168,76,27,17,233,124,121,64,172,151,116,187,39,126,40,161,103,134,151],"mode":"aead_aes256_gcm_rtpsize","media_session_id":"79f6cd580ecd4199f533a0c5f158b28b","dave_protocol_version":1,"audio_codec":"opus"}}
+2026-05-15 08:34:59.401 (1778834099.401000) RECV [text op=15]
+  {"seq":0,"op":15,"d":{"any":100}}
+2026-05-15 08:34:59.401 (1778834099.401700) RECV [binary 74B op=25 seq=1]
+  000119404104c4442018e9a4c3644b0056e4f1fdb815483d5ca45f47c0cf0d3add9c9eeaa5870c61cc49b16111fd3bae200ebf9bb6a210841e0ec584d7a60d60d345d048c48000010100
+2026-05-15 08:34:59.403 (1778834099.403700) SEND [binary 392B op=26 seq=null]
+  1a00010002404104ed1915527b51b6790238c18f1141b7ad2de4f8c30de139cfe84f22845fc9ed4e79b817b3647f9d0e7bf6ae29b07dede317bdc93ad9003c40f4e4aa94e5c7b5d64041045d7ce0482259386736344b0e6e85a0bbbac21484c49f667a88736c3a325ecfd9e0e67faa51b51380c113e1b3d314f37e14d395bf6b8969c88fb54b76081306b7404104634b75fc71389f7e5340a6f2bd09cc1e39b5be29038b64559ae0f47992216635c4690d5fcf6c11e9ee312e923e14ed7bbbb44a35161d67ae41587348d6846fb800010802d835860a8200010200010200020000020001010000000000000000ffffffffffffffff0040473045022054cb2024c392126acd6063a6c5b504d4cd560f06da44c2fd48a1609f965e1bf3022100f010bc34496785b47d382ad96e7498df035e385422b90b777378703bef8eae970040463044022044d758b6a7fdac79e3ec742bbd1d86d099d892a63ca4f51ad7746352e5b53274022006b655395af7bc732c761a74127a9b72a266d6efbf653042a3fa65dde4c78c9e
+2026-05-15 08:35:09.437 (1778834109.437200) ==== VOICE WS CLOSE code=4000 reason= ====
+2026-05-15 08:35:54.810 (1778834154.810800) ==== NEW VOICE WS wss://c-cdg08-2d7aef61.discord.media:2087/?v=9 ====
+2026-05-15 08:35:54.930 (1778834154.930300) SEND [text op=0]
+  {"op":0,"d":{"server_id":"1476763563409539275","channel_id":"1486811384208560148","user_id":"204972632863539201","session_id":"8940568f1f307f8efb418f8d72128aa9","token":"6fd4e1c78ad5cf28","max_dave_protocol_version":1,"video":true,"streams":[{"type":"video","rid":"100","quality":100},{"type":"video","rid":"50","quality":50}]}}
+2026-05-15 08:35:54.931 (1778834154.931900) RECV [text op=8]
+  {"op":8,"d":{"v":8,"heartbeat_interval":13750}}
+2026-05-15 08:35:54.959 (1778834154.959100) RECV [text op=2]
+  {"op":2,"d":{"streams":[{"type":"video","ssrc":5029,"rtx_ssrc":5030,"rid":"50","quality":50,"active":false},{"type":"video","ssrc":5031,"rtx_ssrc":5032,"rid":"100","quality":100,"active":false}],"ssrc":5028,"port":19322,"modes":["aead_aes256_gcm_rtpsize","aead_xchacha20_poly1305_rtpsize"],"ip":"104.29.151.185","experiments":["fixed_keyframe_interval"]}}
+2026-05-15 08:35:54.959 (1778834154.959300) SEND [text op=16]
+  {"op":16,"d":{}}
+2026-05-15 08:35:54.986 (1778834154.986600) RECV [text op=16]
+  {"op":16,"d":{"voice":"0.21.6","rtc_worker":"1.6.61"}}
+2026-05-15 08:35:54.991 (1778834154.991600) SEND [text op=1]
+  {"op":1,"d":{"protocol":"udp","data":{"address":"87.90.119.44","port":50869,"mode":"aead_aes256_gcm_rtpsize"},"address":"87.90.119.44","port":50869,"mode":"aead_aes256_gcm_rtpsize","codecs":[{"name":"opus","type":"audio","priority":1000,"payload_type":120},{"name":"AV1","type":"video","priority":1000,"payload_type":101,"rtx_payload_type":102,"encode":false,"decode":true},{"name":"H265","type":"video","priority":2000,"payload_type":103,"rtx_payload_type":104,"encode":true,"decode":true},{"name":"H264","type":"video","priority":3000,"payload_type":105,"rtx_payload_type":106,"encode":true,"decode":true},{"name":"VP8","type":"video","priority":4000,"payload_type":107,"rtx_payload_type":108,"encode":true,"decode":true}],"rtc_connection_id":"27f7a1fa-d6c8-4db5-abc3-b9ca562e144b","experiments":["fixed_keyframe_interval"]}}
+2026-05-15 08:35:55.020 (1778834155.020500) RECV [text op=4]
+  {"op":4,"d":{"video_codec":"H265","secure_frames_version":1,"secret_key":[3,110,235,210,137,108,35,19,81,181,108,144,15,152,205,73,129,21,94,75,73,178,32,138,227,175,32,85,22,105,116,171],"mode":"aead_aes256_gcm_rtpsize","media_session_id":"4665c6e1e00516a2b8d91f8886b0a1e8","dave_protocol_version":1,"audio_codec":"opus"}}
+2026-05-15 08:35:55.021 (1778834155.021900) RECV [text op=15]
+  {"seq":0,"op":15,"d":{"any":100}}
+2026-05-15 08:35:55.022 (1778834155.022600) RECV [binary 74B op=25 seq=1]
+  000119404104f476246b83a1fc995c5ad1effa3732430612c3f04d3907530337778e5a851c59c17f5c50ff4286b2a8d64f718bb6599105463687b9524eaf1b7bdeda641ad02800010100
+2026-05-15 08:35:55.023 (1778834155.023300) SEND [binary 393B op=26 seq=null]
+  1a00010002404104a3d43adfe2a331675a2599a8ee67ba2e1f77da65c66a53cff0d3ecf71e89b09a50e862cba77858f9ab91703b96b7b0519d2ddcca5aaf38eade6b999dd7aaa0f14041042b72aed0caa37d9d87f497370864e08d37d586b4ebb11c419b150d98a32c1743e9df74b23fd3f10d708cd87467b40d3a4020eb2b7488df5ea39b375e6239487240410422cb5c1b50b77a3b487e050cfb618f07a4ab19e9900e992f9987b3d6451f46d25e752e2a506f05c257d60763657a6bda0a4e9ea0ea64d54b669b934f75194ebe00010802d835860a8200010200010200020000020001010000000000000000ffffffffffffffff0040473045022100c9e347f75990b0c67f67159b7ea04c00d785c3bc2046fca74bd292ddb40ca20b022007f93d254906ee1918ba6f5ba2c6fd5860c41b27adbcb0ba346a46e833ec631d00404730450221009f80af536e3aebe7b3f431ce34842d7c76c831a8a47aa7ec8f5add7d3db40b18022037cf27ed73cc2fcdce2d3a5e97138e3690f14fd463b9e551ce2b30388a8cdf37
+2026-05-15 08:36:08.683 (1778834168.683900) SEND [text op=3]
+  {"op":3,"d":{"t":1778834168683,"seq_ack":1}}
+2026-05-15 08:36:08.712 (1778834168.712300) RECV [text op=6]
+  {"op":6,"d":{"t":1778834168683}}
+2026-05-15 08:36:12.887 (1778834172.887300) ==== VOICE WS CLOSE code=4000 reason= ====
+2026-05-15 08:36:29.843 (1778834189.843600) ==== NEW VOICE WS wss://c-fra13-d9585c55.discord.media:2096/?v=9 ====
+2026-05-15 08:36:29.991 (1778834189.991300) SEND [text op=0]
+  {"op":0,"d":{"server_id":"1449465869397921804","channel_id":"1461125151549685792","user_id":"204972632863539201","session_id":"8940568f1f307f8efb418f8d72128aa9","token":"05545ddf43fa3f4c","max_dave_protocol_version":1,"video":true,"streams":[{"type":"video","rid":"100","quality":100},{"type":"video","rid":"50","quality":50}]}}
+2026-05-15 08:36:29.992 (1778834189.992600) RECV [text op=8]
+  {"op":8,"d":{"v":8,"heartbeat_interval":13750}}
+2026-05-15 08:36:30.026 (1778834190.026900) RECV [text op=2]
+  {"op":2,"d":{"streams":[{"type":"video","ssrc":19481,"rtx_ssrc":19482,"rid":"50","quality":50,"active":false},{"type":"video","ssrc":19483,"rtx_ssrc":19484,"rid":"100","quality":100,"active":false}],"ssrc":19480,"port":19327,"modes":["aead_aes256_gcm_rtpsize","aead_xchacha20_poly1305_rtpsize"],"ip":"104.29.140.138","experiments":["fixed_keyframe_interval"]}}
+2026-05-15 08:36:30.027 (1778834190.027300) SEND [text op=16]
+  {"op":16,"d":{}}
+2026-05-15 08:36:30.035 (1778834190.035400) RECV [text op=11]
+  {"seq":0,"op":11,"d":{"user_ids":["830530156048285716"]}}
+2026-05-15 08:36:30.036 (1778834190.036300) RECV [text op=5]
+  {"seq":1,"op":5,"d":{"user_id":"830530156048285716","ssrc":19143,"speaking":1}}
+2026-05-15 08:36:30.036 (1778834190.036300) RECV [text op=18]
+  {"seq":2,"op":18,"d":{"user_id":"830530156048285716","flags":null}}
+2026-05-15 08:36:30.036 (1778834190.036400) RECV [text op=20]
+  {"seq":3,"op":20,"d":{"user_id":"830530156048285716","platform":null}}
+2026-05-15 08:36:30.061 (1778834190.061500) RECV [text op=16]
+  {"op":16,"d":{"voice":"0.21.6","rtc_worker":"1.6.61"}}
+2026-05-15 08:36:30.068 (1778834190.068100) SEND [text op=15]
+  {"op":15,"d":{"19143":0,"any":100}}
+2026-05-15 08:36:30.068 (1778834190.068600) SEND [text op=1]
+  {"op":1,"d":{"protocol":"udp","data":{"address":"87.90.119.44","port":49610,"mode":"aead_aes256_gcm_rtpsize"},"address":"87.90.119.44","port":49610,"mode":"aead_aes256_gcm_rtpsize","codecs":[{"name":"opus","type":"audio","priority":1000,"payload_type":120},{"name":"AV1","type":"video","priority":1000,"payload_type":101,"rtx_payload_type":102,"encode":false,"decode":true},{"name":"H265","type":"video","priority":2000,"payload_type":103,"rtx_payload_type":104,"encode":true,"decode":true},{"name":"H264","type":"video","priority":3000,"payload_type":105,"rtx_payload_type":106,"encode":true,"decode":true},{"name":"VP8","type":"video","priority":4000,"payload_type":107,"rtx_payload_type":108,"encode":true,"decode":true}],"rtc_connection_id":"052401cc-b7a1-49de-af51-b8f1e29df1ba","experiments":["fixed_keyframe_interval"]}}
+2026-05-15 08:36:30.105 (1778834190.105500) RECV [text op=4]
+  {"op":4,"d":{"video_codec":"H265","secure_frames_version":1,"secret_key":[202,238,141,204,184,123,167,113,136,0,91,96,174,46,66,212,10,130,124,233,254,251,166,144,50,137,6,169,138,188,199,23],"mode":"aead_aes256_gcm_rtpsize","media_session_id":"58faa0d176c520b2cab6244addb1ad58","dave_protocol_version":1,"audio_codec":"opus"}}
+2026-05-15 08:36:30.107 (1778834190.107000) RECV [text op=15]
+  {"seq":4,"op":15,"d":{"any":100}}
+2026-05-15 08:36:30.107 (1778834190.107700) RECV [text op=15]
+  {"seq":5,"op":15,"d":{"any":100}}
+2026-05-15 08:36:30.108 (1778834190.108400) RECV [binary 74B op=25 seq=6]
+  000619404104ade12b859827e6087e156c87696de7cbbd3b800eb0880df58011ddc0b33844ca132bdffb09979434934e38226883787a7b70b14de3277fdfa0f7bb2ebbf5453600010100
+2026-05-15 08:36:30.108 (1778834190.108600) RECV [binary 501B op=27 seq=7]
+  00071b0041ef00010001081446f5957e82002000000000000000000200000000000200010001000240410447e1faea8e4dbe44bd766d3f383d640531c3728e1ad081e5fe74dc721c325858023c3377522e9cd1aa7629bc8133d8282c9de9fe6e33a6be0f8d76dd8c77f454404104db974bcea2ddd917b1a0842ecd10d5bbfa1e10ec7078b72337ba8d98551933ab4062ffefef95c37c07c9ab87fb6af614b9c8c021528a25eea47f991938ffdd22404104440d8fac4650f3ab79f164ae40954edf55562a6036805b8074287eb9d5682f91fe8aff7c38308e5f7666cff2b410b86e8919703499af68a079e45a3b1ed97eb10001080b86a2c6ce8200140200010200020000020001010000000000000000ffffffffffffffff0040473045022030ea19b49c1ebaf95606b317930066584c75291bf8515951b9ff7d85e209d1df022100eb3d10c1c029c2bdc8a6afafc33d9ac49314b3109be0640bdc943f181dd494430040473045022100b8e600a9ab9db1383611abb07b347fc675ec781dc558457038d72ccb29c2e60902200523f3dcf0f6176a7860e869726200d86ccae19740863e2f071f6df89416cafb40473045022046dcc49de5d6207e8cd260183f9e3d5623660de8f1df90c618e5ecbd1c91daca022100e1c10913925ad4dbae7fd3c4ac6d41305071b3edf794c668e85026c307c21ec1
+2026-05-15 08:36:30.109 (1778834190.109900) SEND [binary 393B op=26 seq=null]
+  1a00010002404104576bd240120d63ac985a0f01111096000721f749def53ddb2dcab212dd6f936af77752bb977eb400cc45544a2a8b27d146776bf4bf3c588ec03347f221f7e3594041042acd95c143b122390c321a69b92c014d1d8230f8bb367857b707001d08572ed029af150e881d1bd4d364d7364bd6f0b9e2ec49b5b91b395ee0ab4c4e2b32d444404104a4440d859fba177087c44b3c354bdab4130b9823f1830231d300fba8a296570b0dcd9fd9c7c4f8adc3c14cc1e993b3846a1e0f7cae1d69f6be7caf364ac17ac100010802d835860a8200010200010200020000020001010000000000000000ffffffffffffffff0040473045022100869774382b68f46f3873e7c334ed8cb547c5d10430deed49ad254a196211c563022022a2b260998f0ed620c74c5ee9edd0e587d211f8acaa6faab16830427c0b6d300040473045022056ad10c0d8d32f1881880d30d189c6d8c9764c839d55262a14f56467e4dc467e022100acd3dcba97810329701fd1de1a21fa6eecc65acbd549a249b873346ad338ed69
+2026-05-15 08:36:30.114 (1778834190.114200) SEND [binary 1160B op=28 seq=null]
+  1c00010001081446f5957e820020000000000000000001000000000003220220beea022348f2b4b7e8c0e6b414a8a4f22506fcb9327ba3ac974c9e1ccbcc646100404630440220218ca5aa813f9864050ada1a74d8a31f4c908b4c3ce83ae57212b45ccc2c8798022054132b36a5c4eab75d89c83c7c5927ef1caf23baf4bec65a0fe81148071a4b5420c1284932335512f5b3a78e0e7f4b372b4a484f3980532397869bd127b674286120d759e8ac7e78f4337c8d503cca2dabae7cfa98981096190fb3e1d8e8167f636e00024098209cced1f9cc6f42e61805cb1ca812c1010a4c903cbf2f1ed91d35bd6bfd227d46404104cd3ac946b21cb956e292484cf13047aa326e506407bcc10d5f159b6f194bac0b80e81521653cdf421165bda5ab73a51545a5ecc0895992b87ee209049f56f77a332a41694efa93d9086f232952379fcf4cf69ddf0e1d91846f6a06e26020d7efafc1ca11c2020757cf39ab2c93b595fcb796f246431feb0643770578ad65d08fc5111abc4a3c86da0215ad2c30fa0b717b16aeeabfe73fd98fd341a52123aad334e919ffc5f19358aeb2fe60eae68848cf0a9e070816c2de478520eaa974dc75fbef276cb2a318d77a0a64bb8ab7632d9f6acb92f9916499747e3e8562af20d7a882011d40780f3970b6182d9ffa2d0aa02bef897c98f128cb3133d592bc4a403b9d65a3a33efec6db281342969a1a71bd96deef49438d89d078261b8ab477af93b03019833eb40ad2e18980fca2d257d36308b33fb3b5538e846925962b3d2c63054955e8022204e8b4386efcacf787ea1849eb86945e76a139094746b1f89449a75486c94e03e9f320208c9ab384d1ffb1ba88b7079ff64f91596ae13000aa932e24c2bf988e6a7836875d95a37cc4b0be8cbb1a469c0330b95163fdf4e0e76307528218961708160fd62f67f07198056e158787b89116335a70ab0af89e985cea5df9ae21c47ea0719d18d7d08cee6476a12658599c9ae67b65911461ab8d0a593d6ccf1e90d782d4fa94ac045f2c8081b5ff7791cb62a6200ef47952a2de23591578705d5cf0899e4fbdee7f16520d54e66a885f9591f0a6615b233f2f36d2b8ec1bd978a04f7314d912e6f59023c011b6b00d4bafb5353aa27837c3e0921af35a6c203cce755524ed5b977fda17c007d268fb2fe9792157e16b67435c12e5397d74d0e14b4e402fe04c8f3576606a1ed3c252eda7cf0ed2773f1cd616556d9e24924a4568d50d5c65e53b88f8204e8a4d850ed75776d69fcd0443f0f3006c2b9bdcf573abcc0eb1951125ad7f28c1793703d08e25b86e66a05388875c9a7c24e697aea831691f065be97a7d20130cbe69788394e1b832b29a0a9c00385675cd8a9f0cd860a9d4cbed73ae1562b355178719fb17aa4f46918473924a33b0b819879df9154b37a0cc745fb96717964620f954f21b1603eddabb6b42cdcdcef1a1b2cce778e3d72eb686192aa571438cf4805d2a13c560a60aaeea0c770d259d04bc85456bb2bb11aa59ab9b3d5dfbfc9fd8dcc562ae17108830e62903a23f9e918b81d48c203a5c2abb865f6e6574f706774177a8d6c7f8cdc0dcc5cbd4d51afd886aea65ca2fa5a79195e7d1d9da00d506b8ef
+2026-05-15 08:36:30.149 (1778834190.149600) RECV [binary 207B op=29 seq=8]
+  00081d000000010001081446f5957e820020000000000000000001000000000003220220beea022348f2b4b7e8c0e6b414a8a4f22506fcb9327ba3ac974c9e1ccbcc646100404630440220218ca5aa813f9864050ada1a74d8a31f4c908b4c3ce83ae57212b45ccc2c8798022054132b36a5c4eab75d89c83c7c5927ef1caf23baf4bec65a0fe81148071a4b5420c1284932335512f5b3a78e0e7f4b372b4a484f3980532397869bd127b674286120d759e8ac7e78f4337c8d503cca2dabae7cfa98981096190fb3e1d8e8167f636e
+2026-05-15 08:36:35.047 (1778834195.047200) SEND [text op=15]
+  {"op":15,"d":{"any":100}}
+2026-05-15 08:36:37.698 (1778834197.698100) SEND [text op=5]
+  {"op":5,"d":{"speaking":1,"delay":0,"ssrc":19480}}
+2026-05-15 08:36:43.744 (1778834203.744000) SEND [text op=3]
+  {"op":3,"d":{"t":1778834203744,"seq_ack":8}}
+2026-05-15 08:36:43.778 (1778834203.778200) RECV [text op=6]
+  {"op":6,"d":{"t":1778834203744}}
+2026-05-15 08:36:44.438 (1778834204.438300) SEND [text op=15]
+  {"op":15,"d":{"19143":0,"any":100}}
+2026-05-15 08:36:48.211 (1778834208.211500) ==== VOICE WS CLOSE code=4000 reason= ====
