@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  CARGO_TERM_COLOR: always
+  CMAKE_POLICY_VERSION_MINIMUM: "3.5"
+
+jobs:
+  build:
+    name: Build, lint & test (macOS)
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Toolchain stable
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+
+      - name: Outils de build C++
+        run: brew install cmake pkg-config autoconf automake autoconf-archive libtool
+
+      - name: Cache libdave (vcpkg + build)
+        uses: actions/cache@v4
+        with:
+          path: |
+            third_party/libdave/cpp/build
+            ~/.cache/vcpkg
+          key: libdave-${{ runner.os }}-${{ hashFiles('third_party/libdave/cpp/CMakeLists.txt', 'third_party/libdave/cpp/Makefile') }}
+
+      - name: Build libdave
+        run: |
+          if [ ! -f third_party/libdave/cpp/build/libdave.a ]; then
+            make -C third_party/libdave/cpp all
+          fi
+
+      - uses: Swatinem/rust-cache@v2
+
+      - name: Format
+        run: cargo fmt --all --check
+
+      - name: Clippy
+        run: cargo clippy --all-targets --all-features -- -D warnings
+
+      - name: Build
+        run: cargo build --all-targets --all-features --verbose
+
+      - name: Tests
+        run: cargo test --all-features --verbose

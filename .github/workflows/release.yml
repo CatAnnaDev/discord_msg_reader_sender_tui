@@ -1,0 +1,184 @@
+name: Release auto
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+env:
+  CARGO_TERM_COLOR: always
+  CMAKE_POLICY_VERSION_MINIMUM: "3.5"
+
+jobs:
+  version:
+    name: Calcule la version
+    runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.compute.outputs.tag }}
+      version: ${{ steps.compute.outputs.version }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Toolchain stable
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Determine le prochain numero
+        id: compute
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --tags --force --quiet || true
+          if [ -f Cargo.toml ]; then
+            manifest="Cargo.toml"
+          else
+            manifest=$(find . -name Cargo.toml | grep -v '/target/' | awk -F/ '{print NF, $0}' | sort -n | head -1 | cut -d' ' -f2-)
+          fi
+          cargo_ver=$(cargo metadata --no-deps --format-version 1 --manifest-path "$manifest" | jq -r '.packages[0].version')
+          latest=$(git tag -l 'v*.*.*' | sed 's/^v//' | sort -V | tail -n1 || true)
+          if [[ -z "${latest}" ]]; then
+            next="${cargo_ver}"
+          else
+            IFS='.' read -r MA MI PA <<< "${latest}"
+            bumped="${MA}.${MI}.$((PA + 1))"
+            next=$(printf '%s\n%s\n' "${cargo_ver}" "${bumped}" | sort -V | tail -n1)
+          fi
+          while git rev-parse "v${next}" >/dev/null 2>&1; do
+            IFS='.' read -r MA MI PA <<< "${next}"
+            next="${MA}.${MI}.$((PA + 1))"
+          done
+          echo "version=${next}" >> "$GITHUB_OUTPUT"
+          echo "tag=v${next}" >> "$GITHUB_OUTPUT"
+
+  build:
+    name: Build ${{ matrix.target }}
+    needs: version
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: macos-latest
+            target: aarch64-apple-darwin
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Localise le projet
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -f Cargo.toml ]; then
+            mfdir="."
+          else
+            manifest=$(find . -name Cargo.toml | grep -v '/target/' | awk -F/ '{print NF, $0}' | sort -n | head -1 | cut -d' ' -f2-)
+            mfdir=$(dirname "$manifest")
+          fi
+          echo "MANIFEST_DIR=${mfdir}" >> "$GITHUB_ENV"
+
+      - name: Toolchain stable
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.target }}
+
+      - name: Outils de build C++
+        run: brew install cmake pkg-config autoconf automake autoconf-archive libtool
+
+      - name: Cache libdave (vcpkg + build)
+        uses: actions/cache@v4
+        with:
+          path: |
+            third_party/libdave/cpp/build
+            ~/.cache/vcpkg
+          key: libdave-${{ runner.os }}-${{ hashFiles('third_party/libdave/cpp/CMakeLists.txt', 'third_party/libdave/cpp/Makefile') }}
+
+      - name: Build libdave
+        run: |
+          if [ ! -f third_party/libdave/cpp/build/libdave.a ]; then
+            make -C third_party/libdave/cpp all
+          fi
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: ${{ matrix.target }}
+          workspaces: ${{ env.MANIFEST_DIR }}
+
+      - name: Build release
+        run: cargo build --release --locked --target ${{ matrix.target }} --manifest-path "${{ env.MANIFEST_DIR }}/Cargo.toml"
+
+      - name: Empaquette les binaires
+        id: package
+        shell: bash
+        env:
+          VERSION: ${{ needs.version.outputs.tag }}
+        run: |
+          set -euo pipefail
+          target="${{ matrix.target }}"
+          mfdir="${{ env.MANIFEST_DIR }}"
+          bindir="${mfdir}/target/${target}/release"
+          bins=$(cargo metadata --no-deps --format-version 1 --manifest-path "${mfdir}/Cargo.toml" | jq -r '.packages[].targets[] | select(.kind[] == "bin") | .name')
+          if [[ -z "${bins}" ]]; then
+            echo "asset=" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          ext=""
+          [[ "${target}" == *windows* ]] && ext=".exe"
+          stage="pkg"
+          rm -rf "${stage}"
+          mkdir -p "${stage}"
+          for bin in ${bins}; do
+            src="${bindir}/${bin}${ext}"
+            if [[ -f "${src}" ]]; then
+              cp "${src}" "${stage}/"
+            else
+              echo "::warning::binaire introuvable : ${src}"
+            fi
+          done
+          base="$(basename "$(git rev-parse --show-toplevel)")-${VERSION}-${target}"
+          if [[ "${target}" == *windows* ]]; then
+            asset="${base}.zip"
+            powershell -Command "Compress-Archive -Path '${stage}/*' -DestinationPath '${asset}'"
+          else
+            asset="${base}.tar.gz"
+            tar -czf "${asset}" -C "${stage}" .
+          fi
+          echo "asset=${asset}" >> "$GITHUB_OUTPUT"
+
+      - name: Televerse l'artefact
+        if: steps.package.outputs.asset != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.target }}
+          path: ${{ steps.package.outputs.asset }}
+          if-no-files-found: error
+
+  release:
+    name: Publie la Release
+    needs: [version, build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Recupere toutes les archives
+        uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+
+      - name: Cree la Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ needs.version.outputs.tag }}
+          name: ${{ needs.version.outputs.tag }}
+          target_commitish: ${{ github.sha }}
+          files: dist/*
+          generate_release_notes: true
+          fail_on_unmatched_files: false

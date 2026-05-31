@@ -1,0 +1,8 @@
+*.json
+*.txt
+*.pcap
+*.log
+target/
+.idea/
+img_cache/
+dm/

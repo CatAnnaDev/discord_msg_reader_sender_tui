@@ -1,0 +1,65 @@
+[package]
+name = "discord_msg_sender"
+version = "0.1.0"
+edition = "2024"
+
+[profile.release]
+opt-level = "z"
+lto = true
+strip = true
+codegen-units = 1
+panic = "abort"
+
+[profile.release.package."*"]
+opt-level = "z"
+strip = true
+codegen-units = 1
+
+[profile.release.build-override]
+opt-level = "z"
+strip = true
+codegen-units = 1
+
+[dev-dependencies]
+serde_path_to_error = "0.1"
+
+[dependencies]
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls", "json", "multipart"] }
+tokio = { version = "1", features = ["full"] }
+rand = "0.9"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+serde_derive = "1"
+tungstenite = { version = "0.27", features = ["native-tls"] }
+futures-util = "0.3"
+tokio-tungstenite = { version = "0.27", features = ["native-tls"] }
+chrono = "0.4"
+comparable = { version = "0.5", features = ["derive"] }
+regex = "1"
+viuer = "0.9"
+image = "0.25"
+ratatui = "0.29"
+crossterm = { version = "0.28", features = ["event-stream"] }
+ratatui-image = { version = "4", features = ["crossterm"] }
+
+# Voice
+cpal = "0.15"
+opus = "0.3"
+openh264 = "0.6"
+scrap = "0.5"
+crypto_secretbox = "0.1"
+byteorder = "1"
+
+# Voice E2EE (DAVE / MLS)
+openmls = "0.8"
+openmls_rust_crypto = "0.5"
+openmls_traits = "0.5"
+openmls_basic_credential = "0.5"
+tls_codec = "0.4"
+aes-gcm = "0.10"
+hkdf = "0.12"
+sha2 = "0.10"
+hmac = "0.12"
+aes = "0.8"
+ghash = "0.5"
+ctr = "0.9"
